@@ -15,8 +15,8 @@ while True:
 
     if choice == 1:
         k = int(input("enter the switch position (0-7): "))
-        print(1 << k)
         switches ^= 1 << k  # use XOR to toggle the state
+        # switches = switches ^ (1 << k)
     elif choice == 2:
         k = int(input("enter the switch position (0-7): "))
         print("on" if switches & (1 << k) else "off")

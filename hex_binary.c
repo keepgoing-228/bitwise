@@ -104,7 +104,7 @@ void binary_to_hex(char *binary, char *hex)
     }
 
     // copy the original binary string
-    strcpy(padded_binary + padding, binary);
+    strcpy(padded_binary + padding, binary); // char is pointer, so we can use + padding to add leading zeros
 
     // convert every 4 bits of binary to 1 hex character
     for (i = 0; i < strlen(padded_binary); i += 4)
