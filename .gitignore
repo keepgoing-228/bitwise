@@ -11,3 +11,4 @@ wheels/
 
 # C code
 *.o
+hello
