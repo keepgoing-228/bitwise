@@ -12,3 +12,5 @@ wheels/
 # C code
 *.o
 hello
+classic_application
+hex_binary

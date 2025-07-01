@@ -1,4 +1,4 @@
-TARGET = hello
+TARGET = binary
 
 CC = gcc
 
@@ -6,20 +6,17 @@ CFLAGS = -Wall -g
 
 all: $(TARGET)
 
-hello.o: hello.c # generate hello.o need hello.c
-	$(CC) $(CFLAGS) -c hello.c
+classic_application: classic_application.c
+	$(CC) $(CFLAGS) -o classic_application classic_application.c
 
-$(TARGET): hello.o # generate hello need hello.o
-	$(CC) -o $(TARGET) hello.o
+classic_application_run: classic_application
+	./classic_application
 
-# $(TARGET): hello.c
-# 	$(CC) $(CFLAGS) -o $(TARGET) hello.c
+hex_binary: hex_binary.c
+	$(CC) $(CFLAGS) -o hex_binary hex_binary.c
+
+hex_binary_run: hex_binary
+	./hex_binary
 
 clean:
-	rm -f $(TARGET) hello.o
-
-run:
-	./$(TARGET)
-
-valgrind:
-	valgrind --leak-check=full ./$(TARGET)
+	rm -f $(TARGET) classic_application hex_binary
