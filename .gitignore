@@ -14,3 +14,5 @@ wheels/
 hello
 classic_application
 hex_binary
+
+*.log
